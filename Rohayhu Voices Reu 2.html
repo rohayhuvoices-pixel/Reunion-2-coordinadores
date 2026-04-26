@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohayhu Voices — Reunión 2 · 26 Abril 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF6EE;
+    --dark: #1A1612;
+    --gold: #C9913A;
+    --gold-light: #E8C07A;
+    --teal: #2A7A72;
+    --teal-light: #4BA89E;
+    --red: #C94040;
+    --blue: #3A5FC9;
+    --sage: #7A9A6A;
+    --border: #E0D8C8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--dark);
+    color: var(--cream);
+    padding: 56px 72px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 2px solid rgba(201,145,58,.25);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 120px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,145,58,.15);
+  }
+  .header-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .header h1 span { color: var(--gold); }
+  .header-sub {
+    font-size: 16px;
+    color: rgba(250,246,238,.6);
+    margin-top: 10px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 36px;
+    flex-wrap: wrap;
+  }
+  .meta-chip {
+    background: rgba(201,145,58,.15);
+    border: 1px solid rgba(201,145,58,.3);
+    border-radius: 40px;
+    padding: 6px 18px;
+    font-size: 13px;
+    color: var(--gold-light);
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .main { max-width: 1100px; margin: 0 auto; padding: 64px 40px; }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 72px;
+    animation: fadeUp .5s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1.5px solid var(--border);
+  }
+  .section-num {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .section-badge {
+    margin-left: auto;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* color variants */
+  .c-gold  { background: #FFF8EC; border: 1px solid var(--gold);  }
+  .c-teal  { background: #EEF7F6; border: 1px solid var(--teal);  }
+  .c-red   { background: #FEF0F0; border: 1px solid var(--red);   }
+  .c-blue  { background: #EEF1FD; border: 1px solid var(--blue);  }
+  .c-sage  { background: #F2F7EF; border: 1px solid var(--sage);  }
+  .c-dark  { background: var(--dark); color: var(--cream); border: 1px solid var(--dark); }
+
+  .num-gold { background: var(--gold); color: #fff; }
+  .num-teal { background: var(--teal); color: #fff; }
+  .num-red  { background: var(--red);  color: #fff; }
+  .num-blue { background: var(--blue); color: #fff; }
+  .num-sage { background: var(--sage); color: #fff; }
+  .num-dark { background: var(--dark); color: var(--gold); }
+
+  .badge-gold { background: var(--gold); color: #fff; }
+  .badge-teal { background: var(--teal); color: #fff; }
+  .badge-red  { background: var(--red);  color: #fff; }
+  .badge-blue { background: var(--blue); color: #fff; }
+  .badge-sage { background: var(--sage); color: #fff; }
+  .badge-dark { background: var(--dark); color: var(--gold); }
+
+  /* ── GRID ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+  /* ── CARD ── */
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .card ul { padding-left: 18px; }
+  .card ul li { margin-bottom: 6px; font-size: 14px; }
+  .card p { font-size: 14px; color: #555; }
+
+  /* ── LEVEL FLOW ── */
+  .level-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 28px 0;
+  }
+  .level-box {
+    flex: 1;
+    padding: 24px 20px;
+    border-radius: 0;
+    text-align: center;
+    position: relative;
+  }
+  .level-box:first-child { border-radius: 12px 0 0 12px; }
+  .level-box:last-child  { border-radius: 0 12px 12px 0; }
+  .level-box::after {
+    content: '→';
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: var(--gold);
+    z-index: 2;
+    background: var(--cream);
+    padding: 0 2px;
+  }
+  .level-box:last-child::after { display: none; }
+  .lb-beginner { background: #FFF8EC; border: 2px solid var(--gold); }
+  .lb-elementary { background: #EEF7F6; border: 2px solid var(--teal); }
+  .lb-prekey { background: #EEF1FD; border: 2px solid var(--blue); }
+  .level-box .lv-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .level-box .lv-detail {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+  }
+  .level-box .lv-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .tag-gold  { background: var(--gold);  color: #fff; }
+  .tag-teal  { background: var(--teal);  color: #fff; }
+  .tag-blue  { background: var(--blue);  color: #fff; }
+
+  /* ── FUNNEL ── */
+  .funnel { display: flex; flex-direction: column; gap: 0; margin: 20px 0; }
+  .funnel-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    border-left: 3px solid transparent;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+  }
+  .funnel-step:hover { background: #FFFBF4; }
+  .f-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+    color: #fff;
+  }
+  .f-text { flex: 1; }
+  .f-title { font-weight: 600; font-size: 14px; }
+  .f-sub { font-size: 12px; color: #777; }
+  .f-action {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  /* ── MODULE TIMELINE ── */
+  .module-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .mt-block {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+  }
+  .mt-block::after {
+    content: '→';
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 18px;
+    background: var(--cream);
+  }
+  .mt-block:last-child::after { display: none; }
+  .mt-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+  }
+  .mt-label { font-size: 13px; font-weight: 600; }
+  .mt-weeks { font-size: 11px; color: #888; margin-top: 4px; }
+  .mt-exam {
+    font-size: 10px;
+    background: #FFF0E0;
+    color: var(--gold);
+    border-radius: 20px;
+    padding: 2px 8px;
+    margin-top: 6px;
+    display: inline-block;
+  }
+
+  /* ── EXAM TYPES ── */
+  .exam-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+  .exam-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .exam-card .ec-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .exam-card h5 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .exam-card p { font-size: 12px; color: #666; }
+  .exam-card .ec-freq {
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    background: #EEF7F6;
+    color: var(--teal);
+  }
+
+  /* ── VOLUNTEER FORM ── */
+  .vol-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px; }
+  .form-mock {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .form-mock h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .form-field {
+    margin-bottom: 12px;
+  }
+  .form-field label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .form-field .field-box {
+    background: #F8F5EF;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: #aaa;
+    width: 100%;
+  }
+
+  /* ── LAUNCH TIMELINE ── */
+  .launch-steps {
+    position: relative;
+    margin: 28px 0;
+    padding-left: 36px;
+  }
+  .launch-steps::before {
+    content: '';
+    position: absolute;
+    left: 13px;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+  .ls-item {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .ls-dot {
+    position: absolute;
+    left: -29px;
+    top: 3px;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--cream);
+  }
+  .ls-date {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 3px;
+  }
+  .ls-title { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+  .ls-body { font-size: 13px; color: #666; }
+
+  /* ── SPONSORS TABLE ── */
+  .sponsor-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  .sponsor-table th {
+    background: var(--dark);
+    color: var(--gold);
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .sponsor-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .sponsor-table tr:nth-child(even) td { background: #FAFAF6; }
+  .st-status {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  .st-pending { background: #FFF0E0; color: var(--gold); }
+  .st-confirm { background: #EEFAF4; color: var(--sage); }
+  .st-contact { background: #EEF1FD; color: var(--blue); }
+
+  /* ── CRONOGRAMA ── */
+  .cron-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+  .cron-month {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .cron-header {
+    padding: 14px 18px;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .cron-body { padding: 16px 18px; }
+  .cron-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .cron-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .cron-text { font-size: 13px; }
+  .cron-week { font-size: 10px; color: #aaa; }
+
+  /* ── ALERT BOX ── */
+  .alert {
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-top: 24px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .alert-icon { font-size: 28px; flex-shrink: 0; }
+  .alert h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 8px; }
+  .alert p { font-size: 14px; line-height: 1.6; }
+  .alert-warning { background: #FFF5E0; border: 1.5px solid var(--gold); }
+  .alert-danger  { background: #FEF0F0; border: 1.5px solid var(--red); }
+  .alert-info    { background: #EEF1FD; border: 1.5px solid var(--blue); }
+
+  /* ── RESPONSIBILITY TABLE ── */
+  .resp-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  .resp-table th {
+    background: var(--dark);
+    color: var(--gold);
+    padding: 10px 16px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+  .resp-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    vertical-align: top;
+  }
+  .resp-table tr:nth-child(even) td { background: #FAFAF6; }
+
+  /* ── PENDING CHIPS ── */
+  .pending-wrap { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .pending-chip {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pending-chip::before {
+    content: '○';
+    color: var(--gold);
+    font-size: 12px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--dark);
+    color: rgba(250,246,238,.5);
+    padding: 32px 72px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer span { color: var(--gold); }
+
+  @media (max-width: 768px) {
+    .header { padding: 40px 24px; }
+    .header h1 { font-size: 32px; }
+    .main { padding: 40px 20px; }
+    .grid-2, .grid-3, .module-timeline, .exam-grid, .vol-cols, .cron-grid { grid-template-columns: 1fr; }
+    .level-flow { flex-direction: column; }
+    .level-box::after { display: none; }
+    .footer { flex-direction: column; gap: 8px; padding: 24px; }
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 48px 0;
+  }
+
+  strong { font-weight: 600; }
+  em { color: #888; font-style: normal; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">Reunión de Coordinación · Nº 2</div>
+  <h1>Rohayhu <span>Voices</span></h1>
+  <div class="header-sub">Documento de trabajo — 26 de abril de 2026</div>
+  <div class="header-meta">
+    <div class="meta-chip">📍 Reunión 2 de Coordis</div>
+    <div class="meta-chip">🎯 6 puntos críticos a cerrar</div>
+    <div class="meta-chip">📅 Lanzamiento: por definir</div>
+    <div class="meta-chip">⚠️ Agosto: reorganización del equipo</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ══════════════════════════════════════════════
+       SECCIÓN 1 — NIVELACIÓN DE ALUMNOS
+  ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num num-gold">1</div>
+      <div class="section-title">Sistema de Nivelación de Alumnos</div>
+      <div class="section-badge badge-gold">A CERRAR HOY</div>
+    </div>
+
+    <!-- Levels overview -->
+    <div class="level-flow">
+      <div class="level-box lb-beginner">
+        <div class="lv-tag tag-gold">Nivel 1</div>
+        <div class="lv-title">Beginner</div>
+        <div class="lv-detail">Sin conocimiento previo o muy básico. A1 del MCER. Edad aprox. 10–18 años. Modalidad presencial (El Lector).</div>
+      </div>
+      <div class="level-box lb-elementary">
+        <div class="lv-tag tag-teal">Nivel 2</div>
+        <div class="lv-title">Elementary</div>
+        <div class="lv-detail">Conocimiento básico consolidado. A2 del MCER. Puede ser presencial o virtual.</div>
+      </div>
+      <div class="level-box lb-prekey">
+        <div class="lv-tag tag-blue">Nivel 3</div>
+        <div class="lv-title">Pre-Key</div>
+        <div class="lv-detail">Camino hacia Cambridge Pre-Key (A2 Key). Modalidad virtual.</div>
+      </div>
+    </div>
+
+    <!-- Funnel de filtro -->
+    <p style="margin-bottom:14px; font-weight:600;">Flujo de filtrado de ingreso:</p>
+    <div class="funnel">
+      <div class="funnel-step">
+        <div class="f-num" style="background:var(--gold)">1</div>
+        <div class="f-text">
+          <div class="f-title">Formulario de pre-inscripción (Google Form)</div>
+          <div class="f-sub">Nombre, edad, escuela, nivel educativo, ¿estudió inglés antes? ¿Cuánto tiempo? ¿Cuenta con algun examen standarizado?</div>
+        </div>
+        <div class="f-action" style="background:var(--gold)">Form online</div>
+      </div>
+      <div class="funnel-step">
+        <div class="f-num" style="background:var(--teal)">2</div>
+        <div class="f-text">
+          <div class="f-title">Examen de nivelación escrito — 20 min</div>
+          <div class="f-sub">Vocabulary (10 pts) · Grammar (10 pts) · Reading comprehension (10 pts) · Score total: /30</div>
+        </div>
+        <div class="f-action" style="background:var(--teal)">Presencial / Online</div>
+      </div>
+      <div class="funnel-step">
+        <div class="f-num" style="background:var(--blue)">3</div>
+        <div class="f-text">
+          <div class="f-title">Mini entrevista oral — 5 min (opcional para Elementary+)</div>
+          <div class="f-sub">Preguntas simples: name, age, hobbies. Evalúa producción oral y comprensión básica.</div>
+        </div>
+        <div class="f-action" style="background:var(--blue)">Solo Elementary/PreKey</div>
+      </div>
+      <div class="funnel-step">
+        <div class="f-num" style="background:var(--sage)">4</div>
+        <div class="f-text">
+          <div class="f-title">Resultado + asignación de nivel</div>
+          <div class="f-sub">0–10 pts → Beginner · 11–20 pts → Elementary · 21–30 pts → Pre-Key</div>
+        </div>
+        <div class="f-action" style="background:var(--sage)">Email automático</div>
+      </div>
+    </div>
+
+    <div class="alert alert-warning">
+      <div class="alert-icon">📋</div>
+      <div>
+        <h4>Pendiente: crear los forms</h4>
+        <p>Definir hoy quién se encarga de armar y (si se puede armar ya dale chat porfavor a meterle pata): (a) Form de pre-inscripción en Google Forms, (b) Examen de nivelación escrito — puede ser también en Google Forms con score automático, (c) Planilla de registro de resultados y asignación de grupos.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════
+       SECCIÓN 2 — MÓDULOS Y TIEMPOS
+  ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num num-teal">2</div>
+      <div class="section-title">División por Módulos y Tiempos</div>
+      <div class="section-badge badge-teal">A CERRAR HOY</div>
+    </div>
+
+    <p style="margin-bottom:20px;">Propuesta de estructura modular por nivel. <em>* A confirmar en la reunión.</em></p>
+
+    <!-- Beginner modules -->
+    <div style="margin-bottom:30px;">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+        <div style="width:12px;height:12px;border-radius:50%;background:var(--gold);"></div>
+        <strong style="font-size:16px;">BEGINNER — 4 Módulos para avanzar a Elementary</strong>
+      </div>
+      <div class="module-timeline">
+        <div class="mt-block">
+          <div class="mt-num" style="background:var(--gold)">M1</div>
+          <div class="mt-label">Intro & Greetings</div>
+          <div class="mt-weeks">3–4 semanas</div>
+          <div class="mt-exam">✓ Mini quiz</div>
+        </div>
+        <div class="mt-block">
+          <div class="mt-num" style="background:var(--gold)">M2</div>
+          <div class="mt-label">Daily Life & Family</div>
+          <div class="mt-weeks">3–4 semanas</div>
+          <div class="mt-exam">✓ Mini quiz</div>
+        </div>
+        <div class="mt-block">
+          <div class="mt-num" style="background:var(--gold)">M3</div>
+          <div class="mt-label">Numbers, Time & Places</div>
+          <div class="mt-weeks">3–4 semanas</div>
+          <div class="mt-exam">✓ Mini quiz</div>
+        </div>
+        <div class="mt-block">
+          <div class="mt-num" style="background:#C9913A; opacity:.7">M4</div>
+          <div class="mt-label">Present Tense & Routines</div>
+          <div class="mt-weeks">3–4 semanas</div>
+          <div class="mt-exam" style="background:#FEF0F0;color:var(--red);">⭐ Examen nivel</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Elementary modules -->
+    <div style="margin-bottom:30px;">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+        <div style="width:12px;height:12px;border-radius:50%;background:var(--teal);"></div>
+        <strong style="font-size:16px;">ELEMENTARY — 4 Módulos para avanzar a Pre-Key</strong>
+      </div>
+      <div class="module-timeline">
+        <div class="mt-block">
+          <div class="mt-num" style="background:var(--teal)">M1</div>
+          <div class="mt-label">Past Simple & Stories</div>
+          <div class="mt-weeks">3–4 semanas</div>
+          <div class="mt-exam">✓ Mini quiz</div>
+        </div>
+        <div class="mt-block">
+          <div class="mt-num" style="background:var(--teal)">M2</div>
+          <div class="mt-label">Future & Plans</div>
+          <div class="mt-weeks">3–4 semanas</div>
+          <div class="mt-exam">✓ Mini quiz</div>
+        </div>
+        <div class="mt-block">
+          <div class="mt-num" style="background:var(--teal)">M3</div>
+          <div class="mt-label">Comparisons & Descriptions</div>
+          <div class="mt-weeks">3–4 semanas</div>
+          <div class="mt-exam">✓ Mini quiz</div>
+        </div>
+        <div class="mt-block">
+          <div class="mt-num" style="background:var(--teal); opacity:.7">M4</div>
+          <div class="mt-label">Reading & Oral Practice</div>
+          <div class="mt-weeks">3–4 semanas</div>
+          <div class="mt-exam" style="background:#FEF0F0;color:var(--red);">⭐ Examen nivel</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card c-gold">
+        <h4>⏱ Duración estimada por módulo</h4>
+        <ul>
+          <li>1 módulo = <strong>3 a 4 semanas</strong></li>
+          <li>Frecuencia sugerida: <strong>2 clases por semana</strong></li>
+          <li>Duración de clase: <strong>60–90 min</strong> <em>(a definir)</em></li>
+          <li>Total por nivel ≈ <strong>3–4 meses</strong></li>
+        </ul>
+      </div>
+      <div class="card c-teal">
+        <h4>🎓 Criterio de avance de módulo</h4>
+        <ul>
+          <li>Mini quiz al final de cada módulo (sin nota bloqueante)</li>
+          <li>Examen de nivel al cerrar los 4 módulos</li>
+          <li>Score mínimo para avanzar: <strong>60%</strong> <em>(propuesta)</em></li>
+          <li>Si no alcanza: refuerzo + re-evaluación</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════
+       SECCIÓN 3 — EXÁMENES DE SEGUIMIENTO
+  ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num num-blue">3</div>
+      <div class="section-title">Exámenes de Seguimiento</div>
+      <div class="section-badge badge-blue">A CERRAR HOY</div>
+    </div>
+
+    <p style="margin-bottom:8px;">Tres tipos de evaluaciones a lo largo del programa:</p>
+
+    <div class="exam-grid">
+      <div class="exam-card">
+        <div class="ec-icon">📝</div>
+        <h5>Mini Quiz de Módulo</h5>
+        <p>Al finalizar cada módulo. 10–15 preguntas. Mide vocabulario y gramática del módulo. No es bloqueante pero se registra el progreso.</p>
+        <div class="ec-freq">Cada 3–4 semanas</div>
+      </div>
+      <div class="exam-card">
+        <div class="ec-icon">📊</div>
+        <h5>Examen de Progreso Intermedio</h5>
+        <p>Al finalizar el 2° módulo de cada nivel. Incluye writing breve y comprensión oral. Identifica alumnos que necesitan refuerzo.</p>
+        <div class="ec-freq">A mitad del nivel</div>
+      </div>
+      <div class="exam-card">
+        <div class="ec-icon">🏆</div>
+        <h5>Examen de Nivel (Promoción)</h5>
+        <p>Al completar los 4 módulos del nivel. 4 skills: reading, writing, listening y speaking. Define si el alumno avanza al siguiente nivel.</p>
+        <div class="ec-freq">Al completar el nivel</div>
+      </div>
+    </div>
+
+    <div class="alert alert-info" style="margin-top:20px;">
+      <div class="alert-icon">💡</div>
+      <div>
+        <h4>Herramienta sugerida</h4>
+        <p>Google Forms con corrección automática para los quizzes escritos. Para la parte oral del examen de nivel: rúbrica estandarizada que usen todos los docentes voluntarios. Pendiente: crear plantillas de examen por nivel.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════
+       SECCIÓN 4 — VOLUNTARIOS
+  ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num num-sage">4</div>
+      <div class="section-title">Cuerpo de Voluntarios</div>
+      <div class="section-badge badge-sage">A CERRAR HOY</div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:24px;">
+      <div class="card c-sage">
+        <h4>✅ Requisitos del voluntario docente</h4>
+        <ul>
+          <li>Nivel de inglés: mínimo B2 o equivalente</li>
+          <li>Disponibilidad: mínimo 2hs/semana</li>
+          <li>Compromiso mínimo de <strong>3 meses</strong></li>
+          <li>Pasar por capacitación interna antes de enseñar</li>
+          <li>Tener 16 años o más</li>
+        </ul>
+      </div>
+      <div class="card c-blue">
+        <h4>🔄 Proceso de selección</h4>
+        <div class="funnel">
+          <div class="funnel-step" style="padding:10px 14px;">
+            <div class="f-num" style="background:var(--blue);width:24px;height:24px;font-size:12px;">1</div>
+            <div class="f-text"><div class="f-title" style="font-size:13px;">Form de postulación</div></div>
+          </div>
+          <div class="funnel-step" style="padding:10px 14px;">
+            <div class="f-num" style="background:var(--blue);width:24px;height:24px;font-size:12px;">2</div>
+            <div class="f-text"><div class="f-title" style="font-size:13px;">Entrevista breve (15 min)</div></div>
+          </div>
+          <div class="funnel-step" style="padding:10px 14px;">
+            <div class="f-num" style="background:var(--blue);width:24px;height:24px;font-size:12px;">3</div>
+            <div class="f-text"><div class="f-title" style="font-size:13px;">Capacitación interna</div></div>
+          </div>
+          <div class="funnel-step" style="padding:10px 14px;">
+            <div class="f-num" style="background:var(--sage);width:24px;height:24px;font-size:12px;">✓</div>
+            <div class="f-text"><div class="f-title" style="font-size:13px;">Asignación de grupo</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form mock -->
+    <div class="vol-cols">
+      <div class="form-mock">
+        <h4>📋 Form de Postulación — Voluntario</h4>
+        <div class="form-field"><label>Nombre completo</label><div class="field-box">Tu respuesta</div></div>
+        <div class="form-field"><label>Edad</label><div class="field-box">Tu respuesta</div></div>
+        <div class="form-field"><label>Institución educativa</label><div class="field-box">Tu respuesta</div></div>
+        <div class="form-field"><label>Nivel de inglés (autoevaluación)</label><div class="field-box">B1 / B2 / C1 / Nativo</div></div>
+        <div class="form-field"><label>¿Tenés certificación? ¿Cuál?</label><div class="field-box">Tu respuesta</div></div>
+        <div class="form-field"><label>Disponibilidad horaria</label><div class="field-box">Días y horarios disponibles</div></div>
+        <div class="form-field"><label>¿Por qué querés ser voluntario?</label><div class="field-box">Respuesta corta</div></div>
+        <div class="form-field"><label>¿Podés comprometerte 3 meses mínimo?</label><div class="field-box">Sí / No</div></div>
+      </div>
+      <div>
+        <div class="card c-gold" style="margin-bottom:16px;">
+          <h4>📣 Canales de difusión del call</h4>
+          <ul>
+            <li>Instagram de Rohayhu Voices</li>
+            <li>Grupos de WhatsApp de colegios</li>
+            <li>Boca a boca entre los coordis actuales</li>
+            <li>ASA Run (stand informativo)</li>
+            <li>El Lector — difusión física</li>
+          </ul>
+        </div>
+        <div class="card c-teal">
+          <h4>⚠️ Meta de voluntarios</h4>
+          <p style="margin-bottom:10px;">Con 4 grupos de 20 alumnos se necesitan:</p>
+          <ul>
+            <li><strong>4 docentes principales</strong> (1 por grupo)</li>
+            <li><strong>4 co-docentes</strong> de respaldo</li>
+            <li>Al menos <strong>2 voluntarios</strong> en capacitación permanente</li>
+          </ul>
+          <p style="margin-top:10px; color:var(--red); font-weight:600; font-size:13px;">⚠ Crítico para agosto: necesitamos reemplazos listos ANTES de que el equipo viaje.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════
+       SECCIÓN 5 — LANZAMIENTO
+  ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num num-red">5</div>
+      <div class="section-title">Lanzamiento del Proyecto</div>
+      <div class="section-badge badge-red">15 DE MAYO</div>
+    </div>
+
+    <!-- Dos eventos -->
+    <div class="grid-2" style="margin-bottom:28px;">
+      <div class="card" style="border:2px solid var(--gold); background:#FFFCF4;">
+        <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">EVENTO A</div>
+        <h4 style="font-family:'Playfair Display',serif;font-size:20px;">Conferencia de Prensa</h4>
+        <div style="font-size:13px;color:#666;margin-bottom:14px;">📍 Salón de El Lector</div>
+        <ul style="font-size:13px;">
+          <li>Invitados: <strong>prensa, medios, sponsors</strong></li>
+          <li>Objetivo: visibilidad y cobertura mediática</li>
+          <li>Presentación formal del proyecto</li>
+          <li>Materiales impresos con El Lector</li>
+          <li>Cantidad estimada: <strong>30–50 personas</strong></li>
+        </ul>
+      </div>
+      <div class="card" style="border:2px solid var(--teal); background:#EEF7F6;">
+        <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:8px;">EVENTO B</div>
+        <h4 style="font-family:'Playfair Display',serif;font-size:20px;">Evento Invitacional</h4>
+        <div style="font-size:13px;color:#666;margin-bottom:14px;">📍 Steam Room — ASA</div>
+        <ul style="font-size:13px;">
+          <li>Invitados: <strong>comunidad, futuros alumnos, familias</strong></li>
+          <li>Objetivo: captación de alumnos y comunidad</li>
+          <li>Ambiente más relajado e interactivo</li>
+          <li>Difusión boca a boca + redes</li>
+          <li>Cantidad estimada: <strong>80–120 personas</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Timeline lanzamiento -->
+    <p style="font-weight:600; margin-bottom:16px;">Cronograma hacia el 15 de mayo:</p>
+    <div class="launch-steps">
+      <div class="ls-item">
+        <div class="ls-dot" style="background:var(--red);"></div>
+        <div class="ls-date">Hoy — 26 de abril</div>
+        <div class="ls-title">Definir lugares, lista de invitados y sponsors</div>
+        <div class="ls-body">Confirmar ambos espacios. Asignar responsable de coordinación de cada evento.</div>
+      </div>
+      <div class="ls-item">
+        <div class="ls-dot" style="background:var(--gold);"></div>
+        <div class="ls-date">28 abril – 2 mayo</div>
+        <div class="ls-title">Enviar invitaciones + contactar sponsors</div>
+        <div class="ls-body">Primera ronda de contacto con empresas. Enviar nota o correo para autorización ASA Run.</div>
+      </div>
+      <div class="ls-item">
+        <div class="ls-dot" style="background:var(--teal);"></div>
+        <div class="ls-date">5 – 10 mayo</div>
+        <div class="ls-title">Preparar materiales, gráficas y difusión</div>
+        <div class="ls-body">Flyers digitales, stickers, materiales impresos con El Lector. Post de lanzamiento en redes.</div>
+      </div>
+      <div class="ls-item">
+        <div class="ls-dot" style="background:var(--blue);"></div>
+        <div class="ls-date">12 – 14 mayo</div>
+        <div class="ls-title">Rehearsal y confirmaciones finales</div>
+        <div class="ls-body">Confirmar asistentes. Ensayo del pitch de presentación. Verificar logística de ambos espacios.</div>
+      </div>
+      <div class="ls-item">
+        <div class="ls-dot" style="background:var(--sage); width:20px; height:20px; left:-31px;"></div>
+        <div class="ls-date">15 de mayo 🎉</div>
+        <div class="ls-title" style="font-size:18px; color:var(--teal);">LANZAMIENTO OFICIAL</div>
+        <div class="ls-body">Conferencia de prensa en El Lector + Evento invitacional en Steam Room ASA.</div>
+      </div>
+    </div>
+
+    <!-- Sponsors -->
+    <p style="font-weight:600; margin:24px 0 8px;">Lista de potenciales sponsors y empresas <em>(completar en la reunión)</em></p>
+    <table class="sponsor-table">
+      <tr>
+        <th>Empresa / Organización</th>
+        <th>Tipo de aporte posible</th>
+        <th>Contacto responsable</th>
+        <th>Estado</th>
+      </tr>
+      <tr>
+        <td>El Lector</td>
+        <td>Espacio físico + materiales impresos</td>
+        <td>—</td>
+        <td><span class="st-status st-confirm">Confirmado</span></td>
+      </tr>
+      <tr>
+        <td>ASA (Steam Room)</td>
+        <td>Espacio para evento invitacional</td>
+        <td>Joaqui</td>
+        <td><span class="st-status st-confirm">Ofrecido</span></td>
+      </tr>
+      <tr>
+        <td>ASA Run</td>
+        <td>Difusión / stand informativo</td>
+        <td>—</td>
+        <td><span class="st-status st-pending">Pendiente autorización</span></td>
+      </tr>
+      <tr>
+        <td>________________</td>
+        <td>________________</td>
+        <td>—</td>
+        <td><span class="st-status st-contact">A contactar</span></td>
+      </tr>
+      <tr>
+        <td>________________</td>
+        <td>________________</td>
+        <td>—</td>
+        <td><span class="st-status st-contact">A contactar</span></td>
+      </tr>
+      <tr>
+        <td>________________</td>
+        <td>________________</td>
+        <td>—</td>
+        <td><span class="st-status st-contact">A contactar</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════
+       SECCIÓN 6 — CRONOGRAMA 3 MESES
+  ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num num-dark">6</div>
+      <div class="section-title">Cronograma de Actividades — 3 Meses</div>
+      <div class="section-badge badge-dark">MAYO · JUNIO · JULIO</div>
+    </div>
+
+    <div class="cron-grid">
+      <!-- Mayo -->
+      <div class="cron-month">
+        <div class="cron-header" style="background:var(--gold);">Mayo 2026</div>
+        <div class="cron-body">
+          <div class="cron-item">
+            <div class="cron-dot" style="background:var(--gold)"></div>
+            <div>
+              <div class="cron-text"><strong>Sem 1–2:</strong> Últimas preparaciones pre-lanzamiento</div>
+              <div class="cron-week">Forms, sponsors, materiales</div>
+            </div>
+          </div>
+          <div class="cron-item">
+            <div class="cron-dot" style="background:var(--red)"></div>
+            <div>
+              <div class="cron-text"><strong>15 mayo:</strong> 🎉 LANZAMIENTO OFICIAL</div>
+              <div class="cron-week">El Lector + Steam Room ASA</div>
+            </div>
+          </div>
+          <div class="cron-item">
+            <div class="cron-dot" style="background:var(--gold)"></div>
+            <div>
+              <div class="cron-text"><strong>Sem 3–4:</strong> Exámenes de nivelación</div>
+              <div class="cron-week">Asignación de grupos y niveles</div>
+            </div>
+          </div>
+          <div class="cron-item">
+            <div class="cron-dot" style="background:var(--teal)"></div>
+            <div>
+              <div class="cron-text"><strong>Fin mayo:</strong> Inicio de clases — Módulo 1</div>
+              <div class="cron-week">Todos los niveles</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Junio -->
+      <div class="cron-month">
+        <div class="cron-header" style="background:var(--teal);">Junio 2026</div>
+        <div class="cron-body">
+          <div class="cron-item">
+            <div class="cron-dot" style="background:var(--teal)"></div>
+            <div>
+              <div class="cron-text"><strong>Sem 1–2:</strong> Clases regulares M1</div>
+              <div class="cron-week">Ajuste de grupos si es necesario</div>
+            </div>
+          </div>
+          <div class="cron-item">
+            <div class="cron-dot" style="background:var(--blue)"></div>
+            <div>
+              <div class="cron-text"><strong>Sem 3:</strong> Quiz de cierre Módulo 1</div>
+              <div class="cron-week">Evaluación sin bloqueo</div>
+            </div>
+          </div>
+          <div class="cron-item">
+            <div class="cron-dot" style="background:var(--teal)"></div>
+            <div>
+              <div class="cron-text"><strong>Sem 3–4:</strong> Inicio Módulo 2</div>
+              <div class="cron-week">Seguimiento de progreso</div>
+            </div>
+          </div>
+          <div class="cron-item">
+            <div class="cron-dot" style="background:var(--sage)"></div>
+            <div>
+              <div class="cron-text"><strong>Fin junio:</strong> Movie Night 🎬</div>
+              <div class="cron-week">Actividad complementaria + MKT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Julio -->
+      <div class="cron-month">
+        <div class="cron-header" style="background:var(--blue);">Julio 2026</div>
+        <div class="cron-body">
+          <div class="cron-item">
+            <div class="cron-dot" style="background:var(--blue)"></div>
+            <div>
+              <div class="cron-text"><strong>Sem 1–2:</strong> Clases M2 + examen intermedio</div>
+              <div class="cron-week">Identificar alumnos que necesitan refuerzo</div>
+            </div>
+          </div>
+          <div class="cron-item">
+            <div class="cron-dot" style="background:var(--gold)"></div>
+            <div>
+              <div class="cron-text"><strong>Sem 2:</strong> Inicio Módulo 3</div>
+              <div class="cron-week">—</div>
+            </div>
+          </div>
+          <div class="cron-item">
+            <div class="cron-dot" style="background:var(--red)"></div>
+            <div>
+              <div class="cron-text"><strong>Sem 3–4:</strong> ⚠ Transición pre-agosto</div>
+              <div class="cron-week">Capacitación de reemplazos + handover</div>
+            </div>
+          </div>
+          <div class="cron-item">
+            <div class="cron-dot" style="background:var(--red)"></div>
+            <div>
+              <div class="cron-text"><strong>Fin julio:</strong> Equipo viajero hace handover</div>
+              <div class="cron-week">Documentación + reemplazos asignados</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agosto en adelante — sección crítica -->
+    <div class="alert alert-danger" style="margin-top:32px;">
+      <div class="alert-icon">✈️</div>
+      <div>
+        <h4>TEMA CRÍTICO: Agosto — ¿Qué pasa cuando el equipo viaja?</h4>
+        <p>Aproximadamente <strong>7 personas del equipo principal se van a Estados Unidos en agosto</strong> por la universidad. Esto afecta directamente la operación presencial. Es necesario definir HOY quiénes se quedan, quiénes asumen qué roles, y cómo se garantiza la continuidad del programa.</p>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:20px;">
+      <div class="card c-red">
+        <h4>❓ Preguntas a cerrar hoy</h4>
+        <ul>
+          <li>¿Quiénes del equipo se quedan en Paraguay?</li>
+          <li>¿Pueden los que viajan dar clases virtuales desde EEUU?</li>
+          <li>¿Los voluntarios nuevos pueden tomar los grupos presenciales?</li>
+          <li>¿Se pausa el nivel presencial o se adapta a virtual?</li>
+          <li>¿Cómo se hace el handover de cada grupo?</li>
+        </ul>
+      </div>
+      <div class="card c-sage">
+        <h4>💡 Propuesta de solución</h4>
+        <ul>
+          <li>Reclutar nuevos voluntarios <strong>antes del 31 de julio</strong></li>
+          <li>Capacitar a reemplazos durante julio</li>
+          <li>Los que viajan asumen rol de <strong>supervisión + clases virtuales</strong></li>
+          <li>Los que se quedan asumen <strong>coordinación y presencial</strong></li>
+          <li>Documentar materiales de cada grupo antes de agosto</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="resp-table" style="margin-top:24px;">
+      <tr>
+        <th>Rol</th>
+        <th>Quien lo asume (post-agosto)</th>
+        <th>Modalidad</th>
+        <th>Estado</th>
+      </tr>
+      <tr>
+        <td>Coordinación general</td>
+        <td>____________</td>
+        <td>Presencial / PY</td>
+        <td><span class="st-status st-pending">A definir</span></td>
+      </tr>
+      <tr>
+        <td>Docente Beginner</td>
+        <td>____________</td>
+        <td>Presencial / El Lector</td>
+        <td><span class="st-status st-pending">A definir</span></td>
+      </tr>
+      <tr>
+        <td>Docente Elementary</td>
+        <td>____________</td>
+        <td>Virtual</td>
+        <td><span class="st-status st-pending">A definir</span></td>
+      </tr>
+      <tr>
+        <td>Docente Pre-Key</td>
+        <td>____________</td>
+        <td>Virtual</td>
+        <td><span class="st-status st-pending">A definir</span></td>
+      </tr>
+      <tr>
+        <td>Gestión de Discord</td>
+        <td>____________</td>
+        <td>Remoto posible</td>
+        <td><span class="st-status st-pending">A definir</span></td>
+      </tr>
+      <tr>
+        <td>Redes Sociales / MKT</td>
+        <td>____________</td>
+        <td>Remoto posible</td>
+        <td><span class="st-status st-pending">A definir</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════
+       PENDIENTES GENERALES
+  ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:#888;color:#fff;">★</div>
+      <div class="section-title">Pendientes Generales de Reunión 1</div>
+    </div>
+    <div class="pending-wrap">
+      <div class="pending-chip">Definir lugar del lanzamiento (confirmado o no)</div>
+      <div class="pending-chip">Confirmar cantidad final de grupos</div>
+      <div class="pending-chip">Definir horarios de clases</div>
+      <div class="pending-chip">Definir frecuencia semanal</div>
+      <div class="pending-chip">Definir duración de cada clase</div>
+      <div class="pending-chip">Elegir plataforma: Google Meet vs Zoom</div>
+      <div class="pending-chip">Definir requisitos formales del docente voluntario</div>
+      <div class="pending-chip">Capacitación interna del equipo docente</div>
+      <div class="pending-chip">Propuestas de logo (Mar y Agus)</div>
+      <div class="pending-chip">Página web / espacio digital (Notion o Linktree)</div>
+      <div class="pending-chip">Enviar correo al ASA Run para autorización del stand</div>
+      <div class="pending-chip">Definir materiales educativos (libros, Khan Academy)</div>
+      <div class="pending-chip">Coordinar posibilidad de imprimir con El Lector</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>Rohayhu Voices — <span>Reunión de Coordinación Nº 2</span> · 26 de abril de 2026</div>
+  <div>Documento confidencial de trabajo interno</div>
+</div>
+
+</body>
+</html>
